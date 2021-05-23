@@ -7,12 +7,6 @@ import Logout from "./logout"
 export default function Home() {
     const user = useAppSelector((state) => state.users.User)
     const router = useRouter()
-    // const items = useAppSelector((state) => state.items.items)
-    // const loading = useAppSelector((state) => state.items.loading)
-    // const dispatch = useAppDispatch()
-    // const handleClick = () => {
-    //     dispatch(fetchList())
-    // }
 
     useEffect(() => {
         if (user.isSignedIn === false) {

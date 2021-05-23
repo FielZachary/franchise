@@ -24,7 +24,7 @@ export default function Home() {
 
     return (
         <div>
-            Loading
+            hoy!!! Loading!!!!!
             <Logout />
         </div>
     )

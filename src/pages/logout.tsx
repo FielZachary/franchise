@@ -32,7 +32,7 @@ export default function Logout() {
 
     return (
         <Button onClick={showDeleteConfirm} type="dashed">
-            Log Out
+            Log Out ni!!!
         </Button>
     )
 }

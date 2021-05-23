@@ -2,6 +2,7 @@
   "name": "react_next_js_clean_architecture",
   "version": "0.1.0",
   "private": true,
+  "main": "function.js",
   "scripts": {
     "dev": "next dev",
     "export": "next export",
@@ -9,7 +10,7 @@
     "start": "next start",
     "lint": "prettier --write src/.  && eslint src --ext .tsx,.ts,.js,.jsx --fix",
     "remove_console": "./consoleaway.sh -r src/",
-    "deploy": "yarn run remove_console && yarn run lint && vercel deploy --prod",
+    "deploy": "yarn run remove_console && yarn run lint && yarn build && cross-env NODE_ENV=production firebase deploy --only functions:nextServer,hosting",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -18,7 +19,10 @@
     "@types/react-redux": "^7.1.16",
     "antd": "^4.15.6",
     "axios": "^0.21.1",
+    "cross-env": "^7.0.3",
     "firebase": "^8.6.1",
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1",
     "flv.js": "^1.5.0",
     "history": "^5.0.0",
     "lodash": "^4.17.21",

@@ -3,7 +3,7 @@
     "default": "kahero-staging"
   },
   "targets": {
-    "kahero-8dfde": {
+    "kahero-staging": {
       "hosting": {
         "franchise-kahero-staging": [
           "franchise-kahero-staging"

@@ -2,9 +2,7 @@ import { useRouter } from "next/router"
 import { useEffect } from "react"
 
 import { useAppSelector } from "../app/redux/hooks"
-import Logout from "./logout";
-
-
+import Logout from "./logout"
 
 export default function Home() {
     const user = useAppSelector((state) => state.users.User)
@@ -29,6 +27,5 @@ export default function Home() {
             Loading
             <Logout />
         </div>
-
     )
 }

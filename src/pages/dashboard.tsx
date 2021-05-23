@@ -1,13 +1,12 @@
 import "antd/dist/antd.css"
 
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Breadcrumb, Layout } from "antd"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 
 import { useAppSelector } from "../app/redux/hooks"
-import Logout from "./logout"
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout
 
 export default function Dashboard() {
     const router = useRouter()
@@ -23,10 +22,9 @@ export default function Dashboard() {
         <Layout className="layout">
             <Header>
                 <div className="logo" />
-
             </Header>
-            <Content style={{ padding: '0 50px' }}>
-                <Breadcrumb style={{ margin: '16px 0' }}>
+            <Content style={{ padding: "0 50px" }}>
+                <Breadcrumb style={{ margin: "16px 0" }}>
                     <Breadcrumb.Item>App</Breadcrumb.Item>
                     <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
                 </Breadcrumb>

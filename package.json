@@ -10,7 +10,7 @@
     "start": "next start",
     "lint": "prettier --write src/.  && eslint src --ext .tsx,.ts,.js,.jsx --fix",
     "remove_console": "./consoleaway.sh -r src/",
-    "deploy": "yarn run remove_console && yarn run lint && yarn build && cross-env NODE_ENV=production firebase deploy --only functions:nextServer,hosting",
+    "deploy": "yarn run remove_console && yarn run lint && yarn build && cross-env NODE_ENV=production firebase deploy --only functions:nextServer,hosting:franchise-kahero-staging",
     "prepare": "husky install"
   },
   "dependencies": {

@@ -1,6 +1,4 @@
 import "../app/styles/globals.css"
-// import { useAppDispatch, useAppSelector } from "../app/redux/hooks"
-// import { fetchList } from "../app/redux/item/item.slice"
 import "firebase/auth"
 
 import firebase from "firebase/app"
@@ -14,12 +12,14 @@ import { CleanState, onAuthStateChange } from "../app/redux/user/user.slice"
 import User from "../domain/entities/User"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDl9IiCvWKxaGl1fKvyWRJu3ShTbYbT_Fo",
-    authDomain: "todo-5de9a.firebaseapp.com",
-    projectId: "todo-5de9a",
-    storageBucket: "todo-5de9a.appspot.com",
-    messagingSenderId: "885055285273",
-    appId: "1:885055285273:web:2161ea79cc72b41bfd2288",
+    apiKey: "AIzaSyA2s-wiQ7LM7CmnW6I30HD7TiMC1ej-hoY",
+    authDomain: "kahero-staging.firebaseapp.com",
+    databaseURL: "https://kahero-staging.firebaseio.com",
+    projectId: "kahero-staging",
+    storageBucket: "kahero-staging.appspot.com",
+    messagingSenderId: "564664019140",
+    appId: "1:564664019140:web:27f09ad92896d622528191",
+    measurementId: "G-PP1FZJHFJN",
 }
 
 if (!firebase.apps.length) {

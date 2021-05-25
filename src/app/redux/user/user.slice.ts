@@ -11,11 +11,13 @@ type UserState = PartialBy<User, "password">
 // Define a type for the slice state
 interface CounterState {
     User: UserState
+    loading: boolean
 }
 
 // Define the initial state using that type
 const initialState: CounterState = {
     User: { uid: "", email: "", isSignedIn: null },
+    loading: false,
 }
 
 export const signIn = createAsyncThunk("user/signIn", (currentUser: User) => {
@@ -53,6 +55,8 @@ export const CleanState = createAsyncThunk("user/CleanState", () => {
     return user
 })
 
+export const setLoading = createAsyncThunk("user/setLoading", (value: boolean) => value)
+
 export const userSlice = createSlice({
     name: "user",
     // `createSlice` will infer the state type from the `initialState` argument
@@ -74,6 +78,10 @@ export const userSlice = createSlice({
         builder.addCase(CleanState.fulfilled, (state, action) => ({
             ...state,
             User: action.payload,
+        }))
+        builder.addCase(setLoading.fulfilled, (state, action) => ({
+            ...state,
+            loading: action.payload,
         }))
     },
 })

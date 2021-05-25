@@ -1,5 +1,8 @@
 import "../app/styles/globals.css"
+// eslint-disable-next-line import/no-duplicates
 import "firebase/auth"
+// eslint-disable-next-line import/no-duplicates
+import "firebase/firestore"
 
 import firebase from "firebase/app"
 import PropTypes from "prop-types"
@@ -25,10 +28,12 @@ const firebaseConfig = {
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig)
 } else {
-    firebase.app() // if already initialized, use that one
+    firebase.app()
 }
 
-export { firebase }
+const db = firebase.firestore()
+
+export { db, firebase }
 
 function MyApp({ Component, pageProps }) {
     const dispatch = useAppDispatch()
@@ -55,7 +60,6 @@ function MyApp({ Component, pageProps }) {
 
                 const currentUser = new User(authenticated.email, true)
                 currentUser.uid = authenticated.uid
-
                 dispatch(onAuthStateChange(currentUser))
             } else {
                 dispatch(CleanState())

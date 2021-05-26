@@ -2,7 +2,6 @@
   "name": "react_next_js_clean_architecture",
   "version": "0.1.0",
   "private": true,
-  "main": "function.js",
   "scripts": {
     "dev": "next dev",
     "export": "next export",
@@ -13,6 +12,7 @@
     "deploy": "yarn run remove_console && yarn run lint && yarn build && cross-env NODE_ENV=production firebase deploy --only functions:nextServer,hosting:franchise-kahero-staging",
     "prepare": "husky install"
   },
+  "dependencies": {
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@reduxjs/toolkit": "^1.5.1",
